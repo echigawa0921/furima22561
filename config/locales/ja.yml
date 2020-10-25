@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+ 
+    attributes:
+      item:
+        name: 名称
+        price: 値段
+        image: 画像
+        explanation: 商品の説明
