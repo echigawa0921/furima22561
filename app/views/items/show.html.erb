@@ -3,22 +3,23 @@
 <%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
-      <%= @item.name %>
-    </h2>
-    <div class='item-img-content'>
-      <%= image_tag @item.image, class: "item-img" if @item.image.attached? %>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
-      <div class='sold-out'>
-        <span>Sold Out!!</span>
-      </div>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
-    </div>
-    <span><%= @item.price %>円<br><%= '税込み' %></span>
-    <div class='star-btn'>
-      <%= image_tag "star.png", class:"star-icon" %>
-      <span class='star-count'>0</span>
-    </div>
+
+  <%= @item.name %>
+<div class='item-img-content'>
+  <%= image_tag @item.image, class: "item-img" if @item.image.attached? %>
+  <%# 商品が売れている場合は、sold outを表示しましょう %>
+  <div class='sold-out'>
+    <span>Sold Out!!</span>
+  </div>
+  <%# //商品が売れている場合は、sold outを表示しましょう %>
+</div>
+<div class="item-price-box">
+<span><%= @item.price %>円<br><%= '税込み' %></span>
+<div class='star-btn'>
+  <%= image_tag "star.png", class:"star-icon" %>
+  <span class='star-count'>0</span>
+</div>
+
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
