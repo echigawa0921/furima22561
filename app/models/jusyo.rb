@@ -1,0 +1,2 @@
+class Jusyo < ApplicationRecord
+end

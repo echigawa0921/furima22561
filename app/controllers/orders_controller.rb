@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
 
-    def index
+      def index
         @order = Order.new
-
       end
     
       def create
@@ -15,23 +14,9 @@ class OrdersController < ApplicationController
         end
       end
 
-      def show
-        @item = Item.find(params[:id])
-    end
+    private
 
-    def edit
-        @item = Item.find(params[:id])
+    def order_params
+      params.require(:order).permit(:price)
     end
-    
-    def update
-        @item = Item.find(params[:id])
-        @item.update(item_params)
-    end
-    
-      private
-
-      def order_params
-        params.require(:order).permit(:price)
-      end
-    
 end
