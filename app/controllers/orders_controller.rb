@@ -1,12 +1,13 @@
 class OrdersController < ApplicationController
 
-    def index
-        @order = Order.new
-
+      def index
+        @order = UserItemOrder.new
       end
     
       def create
-        @order = Order.new(order_params)
+        @order = UserItemOrder.new(order_params)
+      binding.pry
+
         if @order.valid?
           @order.save
           return redirect_to root_path
@@ -15,23 +16,9 @@ class OrdersController < ApplicationController
         end
       end
 
-      def show
-        @item = Item.find(params[:id])
-    end
+    private
 
-    def edit
-        @item = Item.find(params[:id])
+    def order_params
+      params.require(:user_item_order).permit(:postal_code, :prefecture_id,:city, :house_number, :builing_name, :phone_number).merge(user_id: current_user.id).merge(item_id: params[:item_id])
     end
-    
-    def update
-        @item = Item.find(params[:id])
-        @item.update(item_params)
-    end
-    
-      private
-
-      def order_params
-        params.require(:order).permit(:price)
-      end
-    
 end
