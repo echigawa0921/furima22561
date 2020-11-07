@@ -2,11 +2,11 @@ class OrdersController < ApplicationController
 
       def index
         @order = UserItemOrder.new
-        binding.pry
       end
     
       def create
         @order = UserItemOrder.new(order_params)
+      binding.pry
 
         if @order.valid?
           @order.save
@@ -19,6 +19,6 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-      params.require(:user_item_order).permit(:postal_code, :prefecture,:city, :house_number, :builing_name, :phone_number).merge(user_id: current_user.id).merge(item_id: params[:item_id])
+      params.require(:user_item_order).permit(:postal_code, :prefecture_id,:city, :house_number, :builing_name, :phone_number).merge(user_id: current_user.id).merge(item_id: params[:item_id])
     end
 end
