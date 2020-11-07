@@ -2,11 +2,12 @@ class OrdersController < ApplicationController
 
       def index
         @order = UserItemOrder.new
+        binding.pry
       end
     
       def create
         @order = UserItemOrder.new(order_params)
-        binding.pry
+
         if @order.valid?
           @order.save
           return redirect_to root_path
