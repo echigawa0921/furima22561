@@ -1,11 +1,11 @@
 # FURIMAアプリ
 
-# ユーザーが商品の出品  
-購入を行うことのできるアプリです
+# ユーザーが商品の出品・購入を行うことのできるアプリです
 
+
+<img width="800" alt="スクリーンショット 2021-04-12 22 20 10" src="https://user-images.githubusercontent.com/69971834/114400806-4b663800-9bdd-11eb-89b1-45bf1cd326ed.png">  
+  
 <https://furima-29329.herokuapp.com/>
-<img width="800" alt="スクリーンショット 2021-04-12 22 20 10" src="https://user-images.githubusercontent.com/69971834/114400806-4b663800-9bdd-11eb-89b1-45bf1cd326ed.png">
-
 
 # Basic認証
 * ID admin
